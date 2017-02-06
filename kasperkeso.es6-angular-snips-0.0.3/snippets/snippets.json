@@ -1,0 +1,26 @@
+{
+	"directive": {
+		"prefix": "dir",
+		"body": "export function ${1:My}Directive() {\r\n  'ngInject';\r\n\r\n  let directive = {\r\n    scope: true,\r\n    templateUrl: '${2:${1}}.html',\r\n    controller: ${1:My}Controller,\r\n    controllerAs: 'vm'\r\n  };\r\n\r\n  return directive;\r\n}\r\n\r\nexport class ${1:My}Controller {\r\n  constructor(${3:$log}) {\r\n    'ngInject';\r\n\r\n    this.activate();\r\n  }\r\n\r\n  activate() {\r\n    $4\r\n  }\r\n}\r\n",
+		"description": "Basic angular directive skeleton (ES6)",
+		"scope": ""
+	},
+	"controller": {
+		"prefix": "cont",
+		"body": "export class ${1:My}Controller {\r\n  constructor(${2:$log}) {\r\n    'ngInject';\r\n\r\n    this.activate();\r\n  }\r\n\r\n  activate() {\r\n    $3\r\n  }\r\n}\r\n\r\n",
+		"description": "Basic angular controller skeleton (ES6)",
+		"scope": ""
+	},
+	"methodq": {
+		"prefix": "metq",
+		"body": "${1:name}($2) {\r\n  let defer = this.$q.defer();\r\n  defer.resolve('resolve');\r\n  defer.reject('reject');\r\n  return defer.promise;\r\n}\r\n",
+		"description": "Method that returns a promise.",
+		"scope": ""
+	},
+	"filter": {
+		"prefix": "filt",
+		"body": "export function ${1:My}Filter($2) {\r\n  'ngInject';\r\n\r\n  return (input) => {\r\n    return input;$3\r\n  };\r\n}\r\n\r\n",
+		"description": "Basic angular filter skeleton in ES6",
+		"scope": ""
+	}
+}

@@ -1,0 +1,455 @@
+{
+    "Bootstrap with router": {
+        "prefix": "ngbootstrap-router",
+        "body": [
+           // main entry point
+            "import { bootstrap }            from '@angular/platform-browser-dynamic';",
+            "import { ${AppComponent} }         from './${app.component}';",
+            "import { APP_ROUTER_PROVIDERS } from './${app.routes}';",
+            "",
+            "bootstrap(${AppComponent}, [",
+            "APP_ROUTER_PROVIDERS",
+            "])",
+            ".catch(err => console.error(err));"
+        ],
+        "description": "Bootstrap app with routes"
+    },
+    "bootstrap with hash URL strategy": {
+            "prefix": "ngbootstrap-hash-url-strategy",
+            "body": [
+            // main entry point
+            "import { bootstrap }            from '@angular/platform-browser-dynamic';",
+            // Add these symbols to override the `LocationStrategy`
+            "import { LocationStrategy,",
+            "HashLocationStrategy } from '@angular/common';",
+            "import { ${AppComponent} }         from './${app.component}';",
+            "import { APP_ROUTER_PROVIDERS } from './${app.routes}';",
+            "",
+            "bootstrap(${AppComponent}, [",
+            "APP_ROUTER_PROVIDERS,",
+            "{ provide: LocationStrategy, useClass: HashLocationStrategy } ",
+            "])",
+            ".catch(err => console.error(err));"
+            ],
+            "description": "Bootstrap app with routes"
+        },
+
+    "Angular App Component": {
+        "prefix": "ng2appComp",
+        "body": [
+            "import {Component, ViewEncapsulation} from 'angular2/core';",
+            "import {",
+            " RouteConfig,",
+            "  ROUTER_DIRECTIVES",
+            "} from 'angular2/router';",
+            "import {HTTP_PROVIDERS} from 'angular2/http';",
+            "",
+            "import {${ChildComponent}} from '../${ChildComponent}/${childComponent}';",
+            "import {${Service}} from '../${Service}/${service}';",
+            "",
+            "@Component({",
+            "  selector: '${selector}',",
+            "  viewProviders: [${Service}],",
+            "  templateUrl: '${./components/app/app.html}',",
+            "  styleUrls: ['${./components/app/app.css}'],",
+            "  encapsulation: ViewEncapsulation.None,",
+            "  directives: [ROUTER_DIRECTIVES]",
+            "})",
+            "@RouteConfig([",
+            "  { path: '/', component: ${ChildComponent}, as: '${ChildComponent}' }",
+            "])",
+            "export class AppCmp {}"
+        ],
+        "description": "Root component of your application"
+    },
+    "Angular Component": {
+        "prefix": "ng2component",
+        "body": [
+            "import {Component, ViewEncapsulation, OnInit, OnDestroy, APPLICATION_COMMON_PROVIDERS } from 'angular2/core';",
+            "import {CORE_DIRECTIVES, COMMON_DIRECTIVES, FORM_BINDINGS, COMMON_PIPES, FORM_DIRECTIVES} from 'angular2/common';",
+            "",
+            "@Component({",
+            "  selector: '${selector}',",
+            "  providers: [APPLICATION_COMMON_PROVIDERS],",
+            "  templateUrl: '${./components/app/app.html}',",
+            "  styleUrls: ['${./components/app/app.css}'],",
+            "  encapsulation: ViewEncapsulation.None,",
+            "  directives: [CORE_DIRECTIVES, COMMON_DIRECTIVES, FORM_BINDINGS, FORM_DIRECTIVES],",
+            "  pipes: [COMMON_PIPES]",
+            "})",
+            "",
+            "export class ${2:name}Component implements OnInit, OnDestroy  {",
+            "$0",
+            "\tconstructor() { }",
+            "",
+            "\tngOnInit() { console.log('ngOnInit'); }",
+            "\tngOnDestroy() { console.log('ngOnDestroy'); }",
+            "}"
+        ],
+        "description": "General component without any service dependency"
+    },
+    "Angular Component With Service": {
+        "prefix": "ng2compService",
+        "body": [
+            "import {Component, ViewEncapsulation, OnInit, OnDestroy } from 'angular2/core';",
+            "import {CORE_DIRECTIVES} from 'angular2/common';",
+            "import {${service}} from '${serviceFolder}/${3:serivceFile}';",
+            "",
+            "@Component({",
+            "  selector: '${selector}',",
+            "  viewProviders: [],",
+            "  templateUrl: '${./components/app/app.html}',",
+            "  styleUrls: ['${./components/app/app.css}'],",
+            "  encapsulation: ViewEncapsulation.None,",
+            "  directives: [CORE_DIRECTIVES]",
+            "})",
+            "",
+            "export class ${name}Component implements OnInit, OnDestroy  {",
+            "$0",
+            "\t//Make sure you bootstrap your service at startup",
+            "\tconstructor(public ${service}: ${service}) { }",
+            "",
+            "\tngOnInit() { console.log('ngOnInit'); }",
+            "\tngOnDestroy() { console.log('ngOnDestroy'); }",
+            "}"
+        ],
+        "description": "Component with service dependency injection"
+    },
+    "Angular Simple Service": {
+        "prefix": "ng2simpleService",
+        "body": [
+            "export class ${Data}Service {",
+            "\t${data} = ['${data1}', '${data2}'];",
+            "\tget(): string[] {",
+            "\t\treturn this.${data};",
+            "}",
+            "\tadd(value: string): void {",
+            "\t\tthis.${data}.push(value);",
+            "\t}",
+            "}"
+        ],
+        "description": "Simple service class"
+    },
+    "Angular Service with Http": {
+        "prefix": "ng2httpService",
+        "body": [
+            "import {HTTP_PROVIDERS, Http} from 'angular2/http';",
+            "import {Injectable} from 'angular2/core';",
+            "",
+            "@Injectable()",
+            "export class ${Component}Service {",
+            "\t${serviceData}: Object[];",
+            "\tconstructor(public http: Http) {",
+            "\t\thttp.get('${http_uri}').subscribe(res => {",
+            "\t\t\tthis.${serviceData} = res.json();",
+            "\t\t});",
+            "\t}",
+            "\tget(): Object[] {",
+            "\t\treturn this.${serviceData};",
+            "\t}",
+            "}"
+        ],
+        "description": "Simple service class"
+    },
+    "For Loop": {
+        "prefix": "forFull",
+        "body": [
+            "for (var ${index} = 0; ${index} < ${array}.length; ${index}++) {",
+            "\tvar ${element} = ${array}[${index}];",
+            "\t$0",
+            "}"
+        ],
+        "description": "For Loop"
+    },
+    "Pipe": {
+        "prefix": "ng2pipeSimple",
+        "body": [
+            "import {Pipe} from 'angular2/core';",
+            "/*",
+            " * Raise the value exponentially",
+            " * Takes an exponent argument that defaults to 1.",
+            " * Usage:",
+            " *   value | ${pipeName}:exponent",
+            " * Example:",
+            " *   {{ 2 |  ${pipeName}:10}}",
+            " *   formats to: 1024",
+            "*/",
+            "@Pipe({name: '${pipeName}'})",
+            "export class ${pipeName}Pipe {",
+            "\ttransform(value:number, args:string[]) : any {",
+            "\t\treturn Math.pow(value, parseInt(args[0] || '1', 10));",
+            "\t}",
+            "}"
+        ],
+        "description": "Stateless custom pipe with arguments"
+    },
+    "Async Stateful Pipe ": {
+        "prefix": "ng2pipeAsyncStateful",
+        "body": [
+            "import {Pipe} from 'angular2/core';",
+            "@Pipe({",
+            "\tname: '${fetch}',",
+            "\tpure: false",
+            "})",
+            "export class ${asyncPipe}Pipe {",
+            "\tprivate ${fetchedValue}:any;",
+            "\tprivate ${fetchPromise}:Promise<any>;",
+            "\ttransform(${value}:string, args:string[]):any {",
+            "\t\tif (!this.${fetchPromise}) {",
+            "\t\t\tthis.${fetchPromise} = window.${fetch}(value)",
+            "\t\t\t.then((result:any) => result.json())",
+            "\t\t\t.then((json:any)   => this.${fetchedValue} = json);",
+            "\t\t}",
+            "\t\treturn this.${fetchedValue};",
+            "\t}",
+            "}"
+        ],
+        "description": "StateFull Async Pipe for promise object data formatting"
+    },
+    "EventEmitter with @Output": {
+        "prefix": "ng2eventEmitter",
+        "body": [
+            "@Output() ${eventName} = new EventEmitter();"
+        ],
+        "description": "Declare Event Emitter with @Output"
+    },
+    "Component Empty Definition": {
+        "prefix": "ng2componentEmpty",
+        "body": [
+            "import {Component } from 'angular2/core';",
+            "@Component({selector: '${componentName}', template: '${<h2>This is ${componentName} component.</h2><h3>Name: {{ ${name} }}}</h3>}'})",
+            "class ${componentName} {",
+            "  ${name}: string = '${Angular2 User}';",
+            "}"
+        ],
+        "description": "Empty Component class"
+    },
+    "Constructor": {
+        "prefix": "ng2constructor",
+        "body": [
+            "constructor(){",
+            "\t$0",
+            "}"
+        ],
+        "description": "Simple constructor definition"
+    },
+    "OnChanges Event": {
+        "prefix": "ng2onChanges",
+        "body": [
+            "\tngOnChanges(changes) {",
+            "\t\tconsole.log('ngOnChanges - ${propertyName} = ' + changes['${propertyName}'].currentValue);",
+            "\t}"
+        ],
+        "description": "OnChanges event is fired whereever component's property is modified"
+    },
+    "Component with AfterContentInit": {
+        "prefix": "ng2componentAfterContentInit",
+        "body": [
+            "import {Component, AfterContentInit} from 'angular2/core';",
+            "",
+            "@Component({",
+            "  selector: '${selector}',",
+            "  template: `${<ng-content></ng-content>}`",
+            "})",
+            "class ${ComponentName} implements AfterContentInit {",
+            "\t//TODO: Add your child component here",
+            "\t//@ContentChild(ChildComponent) contentChild: ChildComponent;",
+            "\tconstructor() {",
+            "\t\t// contentChild is not initialized yet",
+            "\t}",
+            "\tngAfterContentInit() {",
+            "\t\t// contentChild is updated after the content has been checked",
+            "\t\t$0",
+            "\t\tconsole.log('AfterContentInit..');",
+            "\t}",
+            "}"
+        ],
+        "description": "Component implementing AfterContentInit interface"
+    },
+    "Directive Simple One": {
+        "prefix": "ng2directiveSimple",
+        "body": [
+            "import {Component, Directive} from 'angular2/core';",
+            "",
+            "@Directive({ selector: '[${directive-selector}]' })",
+            "export class ${DirectiveName} {",
+            "\tconstructor() {",
+            " \t\t$0",
+            " \t}",
+            "}"
+        ],
+        "description": "Very simple Directive class"
+    },
+    "Component": {
+        "prefix": "component",
+        "body": [
+            "Component"
+        ],
+        "description": "Component"
+    },
+    "Interface Full": {
+        "prefix": "interface",
+        "body": [
+            "export interface ${Some}Interface {",
+            "\t$0",
+            "}"
+        ],
+        "description": "Interface"
+    },
+    "Template": {
+        "prefix": "template",
+        "body": [
+            "template : '${html-template}' $0"
+        ],
+        "description": "Component's configuration object's template property"
+    },
+    "Template Url": {
+        "prefix": "templateUrl",
+        "body": [
+            "templateUrl : `${html-url}` $0"
+        ],
+        "description": "Component's configuration object's templateUrl property"
+    },
+    "Styles array": {
+        "prefix": "styles",
+        "body": [
+            "styles : `[${css-class1},${css-class2}]` $0"
+        ],
+        "description": "Component's configuration object's styles property"
+    },
+    "Directive array": {
+        "prefix": "directives",
+        "body": [
+            "directives: `[${directive1},${directive2}]` $0"
+        ],
+        "description": "Component's configuration object's directives property"
+    },
+    "Provider array": {
+        "prefix": "providers",
+        "body": [
+            "providers: `[${provider1},${provider2}]` $0"
+        ],
+        "description": "Component's configuration object's providers property"
+    },
+    "Injectable": {
+        "prefix": "injectable",
+        "body": [
+            "@Injectable() $0"
+        ],
+        "description": "Injectable"
+    },
+    "Injectable Service": {
+        "prefix": "injectableService",
+        "body": [
+            "@Injectable()",
+            "export class ${Data}Service {",
+            "\t$0",
+            "}"
+        ],
+        "description": "Injectable user service"
+    },
+    "Create Test class": {
+        "prefix": "ngTest",
+        "body": [
+            "import {",
+            "  TestComponentBuilder,",
+            "  describe,",
+            "  expect,",
+            "  inject,",
+            "  it,",
+            "  beforeEachProviders",
+            "} from 'angular2/testing';",
+            "import {Component, provide} from 'angular2/core';",
+            "import {DirectiveResolver} from 'angular2/compiler';",
+            "import {Router, RouteRegistry, ROUTER_PRIMARY_COMPONENT} from 'angular2/router';",
+            "import {Location} from 'angular2/platform/common';",
+            "import {SpyLocation} from 'angular2/src/mock/location_mock';",
+            "import {RootRouter} from 'angular2/src/router/router';",
+            "import {DOM} from 'angular2/src/platform/dom/dom_adapter';",
+            "import {${AppComponent} from './${app.component}';",
+            "export function main() {",
+            "  describe('${App component}', () => {",
+            // Support for testing component that uses Router
+            "    beforeEachProviders(() => [",
+            "      RouteRegistry,",
+            "      DirectiveResolver,",
+            "      provide(Location, {useClass: SpyLocation}),",
+            "      provide(ROUTER_PRIMARY_COMPONENT, {useValue: ${AppComponent}),",
+            "      provide(Router, {useClass: RootRouter})",
+            "    ]);",
+            "    it('${should work}',",
+            "      inject([TestComponentBuilder], (tcb: TestComponentBuilder) => {",
+            "        tcb.createAsync(TestComponent)",
+            "          .then(rootTC => {",
+            "            rootTC.detectChanges();",
+            "            let appDOMEl = rootTC.debugElement.children[0].nativeElement;",
+            "            expect(${DOM.querySelectorAll(appDOMEl, 'nav > a'})[1].href).toMatch(${expectedValue});",
+            "          });",
+            "      }));",
+            "  });",
+            "}"
+        ],
+        "description": "Create simple unit test case class"
+    },
+    "Create E2E Test": {
+        "prefix": "ngE2ETest",
+        "body": [
+            "describe('${ComponentName}', () => {",
+            "  beforeEach(() => {",
+            "    browser.get('${/path}');",
+            "    browser.waitForAngular();",
+            "    ${element.all(by.css('nav > a')).get(1).click();}",
+            "  });",
+            "  it('${should have correct feature heading}', () => {",
+            "    let el = element(${by.css('p')});",
+            "    expect(${el.getText()}).toEqual(${'Features'});",
+            "  });",
+            "});"
+        ],
+        "description": "Create simple E2E Test class"
+    },
+    "Create describe test function": {
+        "prefix": "ngdescribe",
+        "body": [
+            "describe('${component}', () => {",
+            "  it('${should work}',",
+            "    inject([TestComponentBuilder], (tcb: TestComponentBuilder) => {",
+            "      tcb.createAsync(TestComponent)",
+            "        .then((rootTC: any) => {",
+            "          let aboutDOMEl = rootTC.debugElement.children[0].nativeElement;",
+            "            expect(${DOM.querySelectorAll(aboutDOMEl, 'h2')[0].textContent}).${toEqual}(${'Features'});",
+            "        });",
+            "      }));",
+            "  });"
+        ],
+        "description": "Create simple E2E Test class"
+    },
+    "Create it test function": {
+        "prefix": "ngit",
+        "body": [
+            "it('${should do something}',",
+            "    inject([AsyncTestCompleter], (async: AsyncTestCompleter) => {",
+            "                expect(${actualValue}).toBe(${'expected value'});",
+            "                async.done();",
+            "    }));"
+        ],
+        "description": "Create it test scenario function"
+    },
+    "RouteConfig object": {
+        "prefix": "RouteConfig",
+        "body": [
+            "import { provideRouter, RouterConfig } from '@angular/router';",
+            "",
+            "export const routes: RouterConfig = [",
+            "  { path: '${comp1-route-path}', component: ${Component1} },",
+            "  { path: '${comp2-route-path}', component: ${Component2} },",
+            "  { path: '${comp3-route-path}/${:id}', component: ${Component3} }",
+            "];",
+            "",
+            "export const APP_ROUTER_PROVIDERS = [",
+            "  provideRouter(routes)",
+            "];"
+        ],
+        "description": "Create it test scenario function"
+    }
+}

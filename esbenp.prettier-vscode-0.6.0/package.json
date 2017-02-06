@@ -1,0 +1,102 @@
+{
+	"name": "prettier-vscode",
+	"displayName": "Prettier - JavaScript formatter",
+	"description": "VS Code plugin for jlongster/prettier",
+	"version": "0.6.0",
+	"publisher": "esbenp",
+	"author": "Esben Petersen <@esbenp>",
+	"galleryBanner": {
+		"color": "#ffe04b",
+		"theme": "light"
+	},
+	"homepage": "https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/esbenp/prettier-vscode.git"
+	},
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/esbenp/prettier-vscode/issues"
+	},
+	"engines": {
+		"vscode": "^1.5.0"
+	},
+	"categories": [
+		"Formatters"
+	],
+	"activationEvents": [
+		"onLanguage:javascript",
+		"onCommand:prettier.format"
+	],
+	"main": "./out/src/extension",
+	"contributes": {
+		"commands": [
+			{
+				"command": "prettier.format",
+				"title": "Prettier: Format Javascript"
+			}
+		],
+		"configuration": {
+			"type": "object",
+			"title": "Prettier - JavaScript formatter configuration",
+			"properties": {
+				"prettier.formatOnSave": {
+					"type": "boolean",
+					"default": false,
+					"description": "Format on save"
+				},
+				"prettier.printWidth": {
+					"type": "integer",
+					"default": 80,
+					"description": "Fit code within this line limit"
+				},
+				"prettier.tabWidth": {
+					"type": "integer",
+					"default": 2,
+					"description": "Number of spaces it should use per tab"
+				},
+				"prettier.useFlowParser": {
+					"type": "boolean",
+					"default": false,
+					"description": "Use the flow parser instead of babylon"
+				},
+				"prettier.singleQuote": {
+					"type": "boolean",
+					"default": false,
+					"description": "If true, will use single instead of double quotes"
+				},
+				"prettier.trailingComma": {
+					"type": "boolean",
+					"default": false,
+					"description": "Controls the printing of trailing commas wherever possible"
+				},
+				"prettier.bracketSpacing": {
+					"type": "boolean",
+					"default": true,
+					"description": "Controls the printing of spaces inside array and objects"
+				}
+			}
+		}
+	},
+	"scripts": {
+		"vscode:prepublish": "tsc -p ./",
+		"compile": "tsc -watch -p ./",
+		"postinstall": "node ./node_modules/vscode/bin/install",
+		"test": "node ./node_modules/vscode/bin/test"
+	},
+	"devDependencies": {
+		"typescript": "^2.0.3",
+		"vscode": "^1.0.0",
+		"mocha": "^2.3.3",
+		"@types/node": "^6.0.40",
+		"@types/mocha": "^2.2.32"
+	},
+	"dependencies": {
+		"prettier": "0.11.0"
+	},
+	"__metadata": {
+		"id": "96fa4707-6983-4489-b7c5-d5ffdfdcce90",
+		"publisherId": "d16f4e39-2ffb-44e3-9c0d-79d873570e3a",
+		"publisherDisplayName": "Esben Petersen"
+	}
+}

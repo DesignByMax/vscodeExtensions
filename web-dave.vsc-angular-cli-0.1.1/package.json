@@ -1,0 +1,105 @@
+{
+	"name": "vsc-angular-cli",
+	"displayName": "vsc-angular-cli",
+	"description": "run angular-cli commands from command pannel",
+	"version": "0.1.1",
+	"publisher": "web-dave",
+	"engines": {
+		"vscode": "^1.0.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"activationEvents": [
+		"onCommand:extension.ngNew",
+		"onCommand:extension.ngInit",
+		"onCommand:extension.ngDoc",
+		"onCommand:extension.ngLint",
+		"onCommand:extension.ngServe",
+		"onCommand:extension.ngVersion",
+		"onCommand:extension.ngFormat",
+		"onCommand:extension.ngE2e",
+		"onCommand:extension.ngCompletion",
+		"onCommand:extension.ngTest",
+		"onCommand:extension.ngGenerate",
+		"onCommand:extension.ngHelp"
+	],
+	"bugs": {
+		"url": "https://github.com/web-dave/vsc-angular-cli/issues"
+	},
+	"homepage": "https://github.com/web-dave/vsc-angular-cli/blob/master/README.md",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/web-dave/vsc-angular-cli.git"
+	},
+	"main": "./out/src/extension",
+	"contributes": {
+		"commands": [
+			{
+				"command": "extension.ngNew",
+				"title": "ng new"
+			},
+			{
+				"command": "extension.ngInit",
+				"title": "ng init"
+			},
+			{
+				"command": "extension.ngDoc",
+				"title": "ng doc"
+			},
+			{
+				"command": "extension.ngLint",
+				"title": "ng lint"
+			},
+			{
+				"command": "extension.ngServe",
+				"title": "ng serve"
+			},
+			{
+				"command": "extension.ngVersion",
+				"title": "ng version"
+			},
+			{
+				"command": "extension.ngFormat",
+				"title": "ng format"
+			},
+			{
+				"command": "extension.ngE2e",
+				"title": "ng e2e"
+			},
+			{
+				"command": "extension.ngCompletion",
+				"title": "ng completion"
+			},
+			{
+				"command": "extension.ngGenerate",
+				"title": "ng generate"
+			},
+			{
+				"command": "extension.ngTest",
+				"title": "ng test"
+			},
+			{
+				"command": "extension.ngHelp",
+				"title": "ng help"
+			}
+		]
+	},
+	"scripts": {
+		"vscode:prepublish": "node ./node_modules/vscode/bin/compile",
+		"compile": "node ./node_modules/vscode/bin/compile -watch -p ./",
+		"postinstall": "node ./node_modules/vscode/bin/install"
+	},
+	"devDependencies": {
+		"typescript": "^1.8.5",
+		"vscode": "^0.11.0"
+	},
+	"dependencies": {
+		"run-in-terminal": "^0.0.2"
+	},
+	"__metadata": {
+		"id": "ecc74e4a-78ad-4dcf-bc3e-c716ac9c2bd8",
+		"publisherId": "a101aba5-ffb5-436a-84d3-091b1db5b367",
+		"publisherDisplayName": "web-dave"
+	}
+}

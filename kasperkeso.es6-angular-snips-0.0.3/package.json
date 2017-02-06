@@ -1,0 +1,30 @@
+{
+	"name": "es6-angular-snips",
+	"displayName": "Angular ES6 snips",
+	"description": "ES6 style snippets for angular",
+	"version": "0.0.3",
+	"publisher": "kasperkeso",
+	"engines": {
+		"vscode": "^0.10.x"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/koodinorja/angular-snippets-es6"
+	},
+	"categories": [
+		"Snippets"
+	],
+	"contributes": {
+		"snippets": [
+			{
+				"language": "javascript",
+				"path": "./snippets/snippets.json"
+			}
+		]
+	},
+	"__metadata": {
+		"id": "c3bb80b8-1668-4bff-a3c0-b9d11d8b6f32",
+		"publisherId": "ace23cd1-7826-461e-8070-44013aceb9cc",
+		"publisherDisplayName": "kasperkeso"
+	}
+}

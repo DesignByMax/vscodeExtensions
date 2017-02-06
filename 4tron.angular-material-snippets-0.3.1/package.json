@@ -1,0 +1,42 @@
+{
+	"name": "angular-material-snippets",
+	"displayName": "Angular Material Snippets",
+	"description": "Angular Material Snippets for VS Code",
+	"icon": "images/icon.png",
+	"version": "0.3.1",
+	"publisher": "4tron",
+	"license": "See License section in README.md",
+	"homepage": "https://github.com/4tron/angular-material-snippets-master/blob/master/README.md",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/4tron/angular-material-snippets-master.git"
+	},
+	"engines": {
+		"vscode": "^0.10.1"
+	},
+	"galleryBanner": {
+		"color": "#333",
+		"theme": "dark"
+	},
+	"categories": [
+		"Snippets"
+	],
+	"contributes": {
+		"snippets": [
+			{
+				"language": "html",
+				"path": "./snippets/snippets.json"
+			}
+		]
+	},
+	"devDependencies": {
+		"gulp": "^3.9.1",
+		"gulp-jsonlint": "^1.1.2",
+		"gulp-util": "^3.0.7"
+	},
+	"__metadata": {
+		"id": "0d1e3174-c857-455a-9e25-999f283fc890",
+		"publisherId": "54f50dea-fc82-42b7-b82b-140c9a69c7e4",
+		"publisherDisplayName": "4tron"
+	}
+}

@@ -1,0 +1,35 @@
+{
+	"name": "shell-snippets",
+	"description": "Code snippets of shell scripts for visual studio code.",
+	"version": "0.1.2",
+	"publisher": "cdsama",
+	"icon": "images/logo.png",
+	"license": "MIT",
+	"engines": {
+		"vscode": "0.10.x"
+	},
+	"categories": [
+		"Snippets"
+	],
+	"contributes": {
+		"snippets": [
+			{
+				"language": "shellscript",
+				"path": "./snippets/shellscript.json"
+			},
+			{
+				"language": "shellscript",
+				"path": "./snippets/frequently-used.json"
+			}
+		]
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/cdsama/shell-snippets.git"
+	},
+	"__metadata": {
+		"id": "2f00e169-1791-4a94-8c54-ef6cea7fd7ee",
+		"publisherId": "bcdfc89b-79b4-4335-81cc-1e832d7f756d",
+		"publisherDisplayName": "cdsama"
+	}
+}

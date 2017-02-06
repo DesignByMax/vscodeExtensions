@@ -1,0 +1,105 @@
+{
+  "ngFor": {
+    "prefix": "a2NgFor",
+    "body": [
+      "*ngFor=\"let ${item} of ${list}\""
+    ],
+    "description": "Angular *ngFor snippet"
+  },
+  
+  "ngIf": {
+    "prefix": "a2NgIf",
+    "body": [
+      "*ngIf=\"${expression}\""
+    ],
+    "description": "Angular *ngIf snippet"
+  },
+  
+  "ngSwitch": {
+    "prefix": "a2NgSwitch",
+    "body": [
+      "<div [ngSwitch]=\"${conditionExpression}\">",
+      "\t<div *ngSwitchWhen=\"${expression}\">${output}</div>",
+      "\t<div *ngSwitchDefault>${output2}</div>",
+      "</div>"
+    ],
+    "description": "Angular [ngSwitch] snippet"
+  },
+  
+  "ngClass": {
+    "prefix": "a2NgClass",
+    "body": [
+      "[ngClass]=\"{${cssClass}: ${expression}}\""
+    ],
+    "description": "Angular [ngClass] snippet"
+  },
+  
+  "class": {
+    "prefix": "a2ClassBinding",
+    "body": [
+      "[class]=\"${expression}\""
+    ],
+    "description": "Angular [class] binding snippet"
+  },
+  
+  "style": {
+    "prefix": "a2StyleBinding",
+    "body": [
+      "[style.${property}]=\"${expression}\""
+    ],
+    "description": "Angular [style] binding snippet"
+  },
+  
+  "ngStyle": {
+    "prefix": "a2NgStyle",
+    "body": [
+      "[ngStyle]=\"{${style}: ${expression}}\""
+    ],
+    "description": "Angular [ngStyle] snippet"
+  },
+  
+  "ngModel": {
+    "prefix": "a2NgModel",
+    "body": [
+      "[(ngModel)]=\"${binding}\""
+    ],
+    "description": "Angular [(ngModel)] snippet"
+  },
+  
+  "ngForm": {
+    "prefix": "a2NgForm",
+    "body": [
+      "<form #${templateVariableName}=\"ngForm\" (ngSubmit)=\"${functionName}\">",
+      "\t$0",
+      "</form>"
+    ],
+    "description": "Angular ngForm snippet"
+  },
+  
+  "ngSelect": {
+    "prefix": "a2Select",
+    "body": [
+      "<select (change)=\"${changeFunction}($event)\">",
+      "\t<option *ngFor=\"let ${item} of ${list}\" [value]=\"${item}\" [selected]=\"${selectFunction}(${item})\">{{${item}}}</option>",
+      "</select>"
+    ],
+    "description": "Angular <select> control using *ngFor snippet"
+  },
+  
+  "ngRouterLink": {
+    "prefix": "a2RouterLink",
+    "body": [
+      "routerLink=\"${routeName}\""
+    ],
+    "description": "Angular basic routerLink snippet"
+  },
+  
+  "ngRouterLinkWithParameter": {
+    "prefix": "a2RouterLinkWithParameter",
+    "body": [
+      "[routerLink]=\"['${routePath}',${routeParameterValue}$0]\""
+    ],
+    "description": "Angular routerLink with a route parameter snippet"
+  }
+}
+

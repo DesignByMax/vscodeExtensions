@@ -1,0 +1,63 @@
+{
+	"name": "cucumber",
+	"version": "0.9.6",
+	"engines": {
+		"vscode": "^0.10.0"
+	},
+	"displayName": "Cucumber (Gherkin) Syntax and Snippets",
+	"description": "Syntax and snippets for working with cucumber .feature files",
+	"publisher": "stevejpurves",
+	"icon": "images/cukes.png",
+	"galleryBanner": {
+		"color": "#CEF257",
+		"theme": "light"
+	},
+	"bugs": {
+		"url": "https://github.com/stevejpurves/vscode-cucumber/issues"
+	},
+	"homepage": "https://github.com/stevejpurves/vscode-cucumber/blob/master/README.md",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/stevejpurves/vscode-cucumber.git"
+	},
+	"categories": [
+		"Languages",
+		"Snippets"
+	],
+	"activationEvents": [
+		"onLanguage:feature"
+	],
+	"main": "./extension.js",
+	"contributes": {
+		"languages": [
+			{
+				"id": "feature",
+				"aliases": [
+					"Gherkin",
+					"feature"
+				],
+				"extensions": [
+					".feature"
+				]
+			}
+		],
+		"grammars": [
+			{
+				"language": "feature",
+				"scopeName": "text.gherkin.feature",
+				"path": "./syntaxes/feature.tmLanguage"
+			}
+		],
+		"snippets": [
+			{
+				"language": "feature",
+				"path": "./snippets/snippets.json"
+			}
+		]
+	},
+	"__metadata": {
+		"id": "a2fe359b-6dea-4080-904e-3f217e7f56a2",
+		"publisherId": "5da2ac3f-974b-4fbc-adb4-2f949b8ba5b7",
+		"publisherDisplayName": "Steve Purves"
+	}
+}
