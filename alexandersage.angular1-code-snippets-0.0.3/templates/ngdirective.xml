@@ -1,0 +1,45 @@
+<snippet>
+    <prefix>ngdirective</prefix>
+    <displayName>Angular Directive</displayName>
+    <description>Angular 1.x Directive</description>
+    <body>
+        <![CDATA[
+        (function () {
+    'use strict';
+
+    angular
+        .module ('${Module}')
+        .directive ('${directive}', ${directive});
+
+
+    /** @ngInject */
+    function ${directive}(${Dependencies}) {
+
+        function ${directive}Controller(){
+            var vm = this;
+            $0
+            init();
+
+            function init(){
+
+            }
+        }
+
+        function link(){
+
+        }
+
+        return {
+            bindToController: true,
+            controller: ${directive}Controller,
+            controllerAs: '${Ctrl}',
+            link: link,
+            restrict: '${AE}',
+            scope: {},
+        }
+    }
+
+} ());
+        ]]>
+    </body>
+</snippet>

@@ -1,0 +1,53 @@
+{
+	"name": "angular1-code-snippets-johnpapastyle",
+	"displayName": "Angular 1.x snippets for Visual Studio Code using John Papa AngularJS style guide",
+	"description": "Angular 1.x snippets for Visual Studio Code using John Papa AngularJS style guide",
+	"version": "0.1.0",
+	"preview": false,
+	"licence": "MIT",
+	"contributors": [
+		{
+			"name": "Luis Perdomo",
+			"url": "http://www.baseglobal.com.ar",
+			"email": "luisperdomo1985@gmail.com"
+		}
+	],
+	"publisher": "lperdomo",
+	"icon": "icon_128x.png",
+	"scripts": {},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/poncho654321/vscode-angular1-snippets"
+	},
+	"bugs": {
+		"url": "https://github.com/poncho654321/vscode-angular1-snippets/issues"
+	},
+	"homepage": "https://github.com/poncho654321/vscode-angular1-snippets#readme",
+	"engines": {
+		"vscode": "^1.0.0"
+	},
+	"categories": [
+		"Snippets"
+	],
+	"keywords": [
+		"Angular",
+		"visual studio code",
+		"snippets"
+	],
+	"contributes": {
+		"snippets": [
+			{
+				"language": "javascript",
+				"path": "javascript.json"
+			}
+		]
+	},
+	"devDependencies": {
+		"vscode": "^0.11.4"
+	},
+	"__metadata": {
+		"id": "dad3fe37-4dba-4a46-89d8-aa0bd4eb6e31",
+		"publisherId": "3aae5b73-936a-4c32-ba32-023a69d30569",
+		"publisherDisplayName": "lperdomo"
+	}
+}

@@ -1,0 +1,17 @@
+<snippet>
+    <prefix>ngconstant</prefix>
+    <description>Angular 1.x Constant</description>
+    <displayName>Angular Constant</displayName>
+    <body>
+        <![CDATA[
+        (function(){
+    'use strict';
+
+    angular
+        .module('${Module}')
+        .constant('${CONSTANT}', ${Value});
+
+}());
+        ]]>
+    </body>
+</snippet>

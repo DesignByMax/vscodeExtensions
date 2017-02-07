@@ -1,0 +1,55 @@
+{
+	"name": "angular1-code-snippets",
+	"displayName": "AngularJs 1.x Code Snippets",
+	"description": "AngularJs 1.x Code Snippets",
+	"version": "0.0.3",
+	"contributors": [
+		{
+			"name": "Alexander Sage",
+			"url": "https://twitter.com/EvolvedTree",
+			"email": "sagezander@gmail.com"
+		}
+	],
+	"publisher": "alexandersage",
+	"icon": "icon_128x.png",
+	"scripts": {
+		"vscode:prepublish": "node ./node_modules/vscode/bin/compile",
+		"compile": "node .; node ./node_modules/vscode/bin/compile -watch -p ./"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/sagea/vscode-angular1-snippets.git"
+	},
+	"engines": {
+		"vscode": "^0.10.6"
+	},
+	"categories": [
+		"Snippets"
+	],
+	"keywords": [
+		"Angular",
+		"visual studio code",
+		"snippets"
+	],
+	"contributes": {
+		"snippets": [
+			{
+				"language": "javascript",
+				"path": "./snippets/javascript.json"
+			}
+		]
+	},
+	"devDependencies": {
+		"fs-path": "0.0.22",
+		"js-beautify": "^1.6.2",
+		"lodash": "^4.5.0",
+		"typescript": "^1.8.7",
+		"vscode": "^0.11.4",
+		"xml2json": "^0.9.0"
+	},
+	"__metadata": {
+		"id": "fd56db8f-f3a9-45e3-9346-7e4e0a899056",
+		"publisherId": "923e6154-ab0f-4a5b-abd3-4c216d6bd8c6",
+		"publisherDisplayName": "alexandersage"
+	}
+}

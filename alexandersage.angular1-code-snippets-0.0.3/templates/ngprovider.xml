@@ -1,0 +1,33 @@
+<snippet>
+    <prefix>ngprovider</prefix>
+    <description>Angular 1.x Provider</description>
+    <displayName>Angular Provider</displayName>
+    <body>
+        <![CDATA[
+        (function(){
+    'use strict';
+
+    angular
+        .module('${Module}')
+        .provider('${Provider}', ${Provider})
+
+    /** @ngInject */
+    function ${Provider}(${Dependencies}){
+        this.$get = ${Provider}Fn
+        
+        /** @ngInject */
+        function ${Provider}Fn(${Dependencies2}){
+            return {
+                ${fn}: ${fn}
+            }
+
+            function ${fn}(){
+                $0
+            }
+        }
+    }
+
+}());
+        ]]>
+    </body>
+</snippet>
